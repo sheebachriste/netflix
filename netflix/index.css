@@ -1,0 +1,142 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+nav .img img {
+    max-height: 50px;
+}
+
+nav .btn button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #e50914;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+nav .btn button:hover {
+    background-color: #f40612;
+}
+
+/* Main Content */
+.main {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.main h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.main p {
+    font-size: 1.2em;
+}
+
+.main .input {
+    margin-top: 20px;
+}
+
+.main .input input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.main .input button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.main .input button:hover {
+    background-color: #f40612;
+}
+
+/* Feature Sections */
+.first {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+    padding: 20px;
+    gap: 20px;
+}
+
+.first img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.first .text {
+    max-width: 600px;
+}
+
+.first h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.first p {
+    font-size: 1.2em;
+}
+
+/* Frequently Asked Questions */
+.button {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.button h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.button button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.button button:hover {
+    background-color: #333;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #000;
+    padding: 20px;
+    color: #fff;
+    flex-wrap: wrap;
+}
+
+.footer .list p {
+    margin: 10px 0;
+}

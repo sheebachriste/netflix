@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Streaming - Landing</title>
+  <meta name="description" content="A clean, responsive Netflix-like landing page sample." />
+  <style>
+    :root{
+      --bg:#141414; --card:#1f1f1f; --accent:#e50914; --muted:#bfbfbf; --max:1100px;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:var(--bg);color:#fff;line-height:1.4}
+    header{display:flex;justify-content:space-between;align-items:center;padding:20px 4%;max-width:var(--max);margin:0 auto}
+    .brand img{height:42px}
+    .nav-actions{display:flex;gap:10px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:6px;color:#fff;cursor:pointer}
+    .btn.primary{background:var(--accent);border:none}
+
+    /* Hero */
+    .hero{max-width:var(--max);margin:20px auto;padding:40px 4%;display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+    .hero-inner{display:flex;flex-direction:column;gap:18px;max-width:720px}
+    .hero h1{font-size:clamp(28px,5vw,48px);margin:0}
+    .hero p{color:var(--muted);margin:0}
+    .email-form{display:flex;gap:8px;margin-top:6px}
+    .email-form input[type="email"]{flex:1;padding:14px;border-radius:6px;border:1px solid rgba(255,255,255,0.12);background:transparent;color:#fff}
+    .email-form button{padding:14px 20px;border-radius:6px;border:none;background:var(--accent);color:#000;font-weight:600;cursor:pointer}
+
+    /* Feature sections */
+    .features{max-width:var(--max);margin:40px auto;padding:0 4%;display:grid;gap:36px}
+    .feature{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:10px}
+    .feature .text h2{margin:0 0 6px 0}
+    .feature img, .feature video{max-width:100%;border-radius:8px;display:block}
+
+    /* FAQ + Footer */
+    .faq{max-width:var(--max);margin:34px auto;padding:0 4%}
+    .faq h2{margin-bottom:12px}
+    .faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+    .faq button{width:100%;text-align:left;padding:14px;border-radius:8px;background:var(--card);border:none;color:#fff;cursor:pointer}
+
+    footer{max-width:var(--max);margin:40px auto;padding:24px 4%;color:var(--muted);display:flex;flex-wrap:wrap;gap:20px}
+    .footer-col{min-width:160px}
+    .small{font-size:13px;color:var(--muted)}
+
+    @media(min-width:900px){
+      .hero{grid-template-columns:1fr 420px}
+      .feature{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand" aria-hidden="false">
+      <img src="https://res09.bignox.com/appcenter/en/2020/02/US-en-20200210-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="Streaming brand sign"/>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn" type="button" aria-label="Choose language">English</button>
+      <button class="btn primary" type="button">Sign in</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <h1 id="hero-title">Unlimited movies, TV shows, and more.</h1>
+        <p class="small">Watch anywhere. Cancel anytime.</p>
+        <p class="small">Ready to watch? Enter your email to create or restart your membership.</p>
+
+        <form class="email-form" action="#" method="post" onsubmit="return validateEmail(event)" aria-label="Get started form">
+          <label for="email" class="visually-hidden">Email address</label>
+          <input id="email" name="email" type="email" inputmode="email" placeholder="Email address" required aria-required="true" />
+          <button type="submit">Get started</button>
+        </form>
+      </div>
+
+      <div aria-hidden="true">
+        <img src="https://marketplace.canva.com/EAFTl0ixW_k/1/0/1131w/canva-black-white-minimal-alone-movie-poster-YZ-0GJ13Nc8.jpg" alt="Movie poster example" />
+      </div>
+    </section>
+
+    <section class="features" aria-label="Feature highlights">
+      <article class="feature">
+        <div class="text">
+          <h2>Enjoy on your TV</h2>
+          <p class="small">Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu‑ray players and more.</p>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTarlRFYXZLbVfOrDI3UCm_x9qY5rIqjuDDGA&s" alt="TV with streaming app"/>
+      </article>
+
+      <article class="feature">
+        <div class="text">
+          <h2>Download your shows to watch offline</h2>
+          <p class="small">Save your favourites easily and always have something to watch.</p>
+        </div>
+        <!-- If you have a local MP4/M4V, use a relative path and the <video> element. Example below. -->
+        <video controls preload="metadata" aria-label="Example device video">
+          <source src="assets/video/video-devices-in.m4v" type="video/mp4" />
+          <p>Your browser does not support the video tag. Download the video <a href="assets/video/video-devices-in.m4v">here</a>.</p>
+        </video>
+      </article>
+
+      <article class="feature">
+        <div class="text">
+          <h2>Watch everywhere</h2>
+          <p class="small">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMHKZNASOCjdMqDDBVYyHA16ejPpqrg_MFVg&s" alt="Devices showing streaming"/>
+      </article>
+
+      <article class="feature">
+        <div class="text">
+          <h2>Create profiles for children</h2>
+          <p class="small">Send children on adventures with their favourite characters in a space made just for them—free with your membership.</p>
+        </div>
+        <img src="https://mobicip-content-files.s3.amazonaws.com/wp-content/uploads-cms/2024/08/Adding-child-Profile-in-Netflix-1.png" alt="Children profile example"/>
+      </article>
+    </section>
+
+    <section class="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Frequently asked questions</h2>
+      <div class="faq-grid">
+        <button type="button">What is the cost?</button>
+        <button type="button">How much does it cost?</button>
+        <button type="button">Where can I watch?</button>
+        <button type="button">How do I cancel?</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-col">
+      <p class="small">Questions? Call 000-800-0000</p>
+    </div>
+    <div class="footer-col">
+      <p>FAQ<br/>Investor Relations<br/>Privacy<br/>Speed Test<br/>Netflix India</p>
+    </div>
+    <div class="footer-col">
+      <p>Help Center<br/>Jobs<br/>Cookies Preference<br/>Legal Notices</p>
+    </div>
+    <div class="footer-col">
+      <p>Account<br/>Ways to Watch<br/>Corporate Information<br/>Only on Streaming</p>
+    </div>
+    <div style="flex-basis:100%"></div>
+    <p class="small">© 2025 Streaming. All rights reserved.</p>
+  </footer>
+
+  efault();
+      const input = document.getElementById('email');
+      const val = i
+      <script>
+    async function validateEmail(e) {
+  e.preventDefault();
+  const input = document.getElementById("email");
+  const val = input.value.trim();
+
+  if (!val || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  try {
+    const res = await fetch("http://localhost:5000/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: val }),
+    });
+
+    const data = await res.json();
+    alert(data.message);
+  } catch (err) {
+    alert("Something went wrong. Try again later.");
+    console.error(err);
+  }
+}
+</script>
+
+</body>
+</html>
